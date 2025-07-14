@@ -1,0 +1,88 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.nav-glass {
+  backdrop-filter: blur(10px);
+background: linear-gradient(to top, #000000, #014d00);
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00ff00 0%, #00cc00 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-color: #00cc00;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 50;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pisahkan atas dan bawah */
+  padding: 20px;
+}
+
+.sidebar.open {
+  transform: translateY(0);
+}
+
+.sidebar .menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 13vh;
+}
+
+.sidebar .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 10%;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+
+/* close sidebar */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5); /* gelap semi-transparan */
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
