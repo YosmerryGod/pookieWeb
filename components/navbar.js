@@ -62,7 +62,8 @@ export function renderNavbar() {
         const image = document.createElement('img');
         image.src = img;
         image.alt = `${name} icon`;
-        image.className = 'h-6 w-6 hover:scale-110 transition-transform';
+        image.className = 'h-6 w-6 hover:scale-110 transition-transform filter brightness-0 invert';
+
 
         a.appendChild(image);
         socialWrapper.appendChild(a);
@@ -143,7 +144,8 @@ export function renderSidebar(links) {
         const image = document.createElement('img');
         image.src = img;
         image.alt = `${name} icon`;
-        image.className = 'h-6 w-6';
+        image.className = 'h-6 w-6 filter brightness-0 invert';
+
 
         a.appendChild(image);
         socialWrapper.appendChild(a);
