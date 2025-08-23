@@ -31,7 +31,7 @@ export function renderHeroSection() {
   btnDocs.className = 'btn-primary text-black font-bold py-3 px-8 rounded-full';
   btnDocs.textContent = 'Read Docs';
   btnDocs.addEventListener('click', () => {
-    window.location.href = '/components/docs.html'; // arahkan ke docs.html
+    window.location.href = '/docs.html'; // arahkan ke docs.html
     // kalau hosting kamu pakai subpath: pookieabs.xyz/docs
     // ganti dengan: window.location.href = '/docs';
   });
