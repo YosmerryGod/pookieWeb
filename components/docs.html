@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pookie DApp — Documentation</title>
+  <meta name="description" content="Official documentation of Pookie DApp: Introduction, Wallet Portfolio, Swap, Staking, Trending Tokens, AI Token Analysis." />
+
+   <link rel="icon" type="image/png" href="../assets/logo.png" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0b0d0f',
+            panel: '#111418',
+            muted: '#9aa4ad',
+            textp: '#e8edf1',
+            brand: '#78e08f',
+            brand2: '#43a047',
+            borderp: '#1c2228',
+          },
+          boxShadow: {
+            soft: '0 10px 24px rgba(0,0,0,.35)',
+            insetBrand: 'inset 0 1px 0 #1c3823',
+          },
+          borderRadius: { xl2: '16px' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen text-textp bg-[linear-gradient(180deg,#0a0c0e_0%,#0b0d10_40%,#0b0d0f_100%)]">
+
+  <!-- Mobile Topbar -->
+  <header class="md:hidden sticky top-0 z-40 border-b border-borderp bg-[linear-gradient(180deg,#0f1317_0%,#0e1115_100%)]">
+    <div class="flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="../assets/logo.png" alt="Pookie Logo" class="w-8 h-8 rounded-md border border-white/10" />
+        <span class="font-semibold">Pookie DApp Docs</span>
+      </div>
+      <button id="openMenu" class="px-3 py-1.5 rounded-md border border-borderp text-sm hover:bg-white/5">Menu</button>
+    </div>
+  </header>
+
+  <div class="grid min-h-screen grid-cols-1 md:grid-cols-[280px_1fr]">
+
+    <!-- Overlay (mobile) -->
+    <div id="overlay"
+         class="fixed inset-0 bg-black/50 backdrop-blur-[1px] z-30 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+      class="z-40 md:z-auto md:static md:translate-x-0 fixed top-0 left-0 h-full w-[82%] max-w-[300px]
+             -translate-x-full transition-transform duration-200 ease-out
+             md:h-screen bg-[linear-gradient(180deg,#0f1317_0%,#0e1115_100%)]
+             border-b md:border-b-0 md:border-r border-borderp p-4">
+
+      <!-- Header/logo in sidebar -->
+      <div class="flex items-center gap-3 rounded-[12px] bg-panel border border-borderp shadow-soft p-2 mb-3">
+        <img src="../assets/logo.png" alt="Pookie Logo" class="w-9 h-9 rounded-[10px] border border-white/10 object-cover" />
+        <div>
+          <h1 class="text-[16px] leading-none m-0">Pookie DApp Docs</h1>
+          <small class="text-muted block mt-[2px]">Abstract Chain · Web3 + AI</small>
+        </div>
+      </div>
+
+      <nav id="nav" class="mt-3 text-[15px]">
+        <h2 class="text-[12px] font-semibold uppercase tracking-[.12em] text-muted mx-2 mt-4 mb-2">Overview</h2>
+        <a href="#intro" data-route="intro"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition
+                  text-textp no-underline font-medium px-3 py-2 mx-1 my-[6px] active-link">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none group-[.active-link]:bg-brand"></span>
+          Introduction
+        </a>
+
+        <h2 class="text-[12px] font-semibold uppercase tracking-[.12em] text-muted mx-2 mt-4 mb-2">Features</h2>
+        <a href="#wallet" data-route="wallet"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition px-3 py-2 mx-1 my-[6px] no-underline font-medium text-textp">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none"></span> Wallet Portfolio
+        </a>
+        <a href="#swap" data-route="swap"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition px-3 py-2 mx-1 my-[6px] no-underline font-medium text-textp">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none"></span> Swap
+        </a>
+        <a href="#staking" data-route="staking"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition px-3 py-2 mx-1 my-[6px] no-underline font-medium text-textp">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none"></span> Staking
+        </a>
+        <a href="#trending" data-route="trending"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition px-3 py-2 mx-1 my-[6px] no-underline font-medium text-textp">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none"></span> Trending Tokens
+        </a>
+        <a href="#ai" data-route="ai"
+           class="group flex items-center gap-2 rounded-[10px] border border-transparent transition px-3 py-2 mx-1 my-[6px] no-underline font-medium text-textp">
+          <span class="w-2 h-2 rounded-full bg-muted/90 flex-none"></span> AI Token Analysis
+        </a>
+
+        <!-- Close button (mobile) -->
+        <button id="closeMenu"
+                class="md:hidden mt-4 w-full px-3 py-2 rounded-md border border-borderp text-sm hover:bg-white/5">
+          Close
+        </button>
+      </nav>
+
+      <div class="mt-6 pt-3 border-t border-dashed border-borderp text-muted text-[12px]">
+        <div>Official links:</div>
+        <div class="mt-[6px]">
+          <a class="text-brand hover:underline" href="https://pookieabs.xyz" target="_blank" rel="noopener">Website</a> ·
+          <a class="text-brand hover:underline" href="https://twitter.com/pookiedotfun" target="_blank" rel="noopener">Twitter</a> ·
+          <a class="text-brand hover:underline" href="https://t.me/pookieAbstract" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="p-[28px] md:px-[clamp(18px,4vw,48px)]">
+      <article id="page" class="max-w-[980px] mx-auto rounded-xl2 border border-borderp shadow-soft bg-[rgba(19,23,28,.6)]">
+        <header id="page-header"
+                class="rounded-t-xl2 border-b border-borderp px-7 pt-7 pb-3
+                       bg-[linear-gradient(180deg,rgba(120,224,143,.08),rgba(120,224,143,0)_60%)]">
+          <h2 class="text-[28px] tracking-[.2px] mb-2">Introduction</h2>
+          <p class="text-muted m-0">Summary of the Pookie DApp ecosystem on Abstract Chain: transparent, secure, and AI-powered.</p>
+        </header>
+
+        <section id="page-body" class="px-7 pb-8 pt-6 leading-7">
+          <!-- Dynamic content via JS -->
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // small helpers
+    const KPI = (label, value) =>
+      `<div class="bg-[#0f1317] border border-borderp rounded-[12px] px-4 py-3 text-muted">
+         <div>${label}</div><b class="text-textp text-[18px]">${value}</b>
+       </div>`;
+    const Callout = (html) =>
+      `<div class="my-4 px-4 py-3 rounded-[12px] border border-[#214b2d]
+                  bg-[linear-gradient(180deg,rgba(67,160,71,.12),rgba(67,160,71,.04))]">
+         ${html}
+       </div>`;
+
+    const CONTENT = {
+      intro: {
+        title: "Introduction",
+        subtitle: "Summary of the Pookie DApp ecosystem on Abstract Chain: transparent, secure, and AI-powered.",
+        body: `
+          <p><strong>Pookie</strong> is a Web3 ecosystem that combines <em>meme culture</em> with real utility on <strong>Abstract Chain</strong>. Through one unified application—<strong>Pookie DApp</strong>—users can manage portfolios, swap digital assets, earn rewards from staking, monitor the market in real time, and perform AI-driven token analysis.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-3">
+            ${KPI('Architecture','Non-custodial')}
+            ${KPI('Focus','UX + Transparency')}
+            ${KPI('Support','AI-Driven')}
+          </div>
+          ${Callout('<strong class="text-brand">Vision:</strong> To become the main gateway for communities into a Web3 experience that is safe, enjoyable, and intelligent—with clear documentation and strong security standards.')}
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li>Core modules: <strong>Wallet Portfolio, Swap, Staking, Trending Tokens, AI Token Analysis</strong>.</li>
+            <li>All <em>on-chain</em> actions are traceable through tx hashes, ensuring public auditability.</li>
+            <li>The interface is <em>mobile-first</em>, lightweight, and features dark mode by default.</li>
+          </ul>
+        `
+      },
+      wallet: {
+        title: "Wallet Portfolio",
+        subtitle: "Comprehensive dashboard for on-chain assets, transactions, and smart insights.",
+        body: `
+          <p><strong>Wallet Portfolio</strong> is the foundation of Pookie DApp. Once a wallet is connected, users gain a complete view of their holdings, including estimated values (USD/BNB/USDT) and <em>real-time</em> transaction history for swaps, transfers, and staking.</p>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Asset Overview:</strong> token balances with multi-denomination estimated values.</li>
+            <li><strong>Transaction History:</strong> transparent on-chain tracking (hash, block, status).</li>
+            <li><strong>Portfolio Charts:</strong> visualization of value changes over time.</li>
+            <li><strong>AI Insights:</strong> smart notifications for volume spikes, liquidity risks, or abnormal price deviations.</li>
+          </ul>
+          ${Callout('<strong class="text-brand">Goal:</strong> to serve as an <em>intelligent dashboard</em> that enables more precise investment decisions, beyond just a balance list.')}
+        `
+      },
+      swap: {
+        title: "Swap",
+        subtitle: "Best price execution via Multi-Router Intelligence with AI risk protection.",
+        body: `
+          <p>The <strong>Swap</strong> module ensures efficient and secure token exchanges. The <em>Multi-Router Intelligence</em> engine selects the best liquidity route across Moonshot and AbstractSwap (V2 & V3) to minimize slippage and secure competitive pricing.</p>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Best-Price Routing:</strong> automatically chooses the optimal path across DEXs.</li>
+            <li><strong>Transparent & On-Chain:</strong> every swap includes a tx hash verifiable by the public.</li>
+            <li><strong>AI Risk Alerts:</strong> warnings for risky tokens (thin liquidity, unusual price patterns, etc.).</li>
+            <li><strong>Responsive UX:</strong> simple interface suitable for both beginners and pro traders.</li>
+          </ul>
+          ${Callout('<strong class="text-brand">Note:</strong> Users retain full control of their assets (non-custodial); no authorizations are required beyond transaction permissions.')}
+        `
+      },
+      staking: {
+        title: "Staking",
+        subtitle: "Passive income with dynamic yields and auditor-secured contracts.",
+        body: `
+          <p><strong>Staking</strong> provides sustainable financial incentives for holders. Reward rates adjust dynamically based on the total assets locked, with flexible term options ranging from short-term to long-term.</p>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Competitive Rewards:</strong> automatically and transparently distributed directly to wallets.</li>
+            <li><strong>Flexible Terms:</strong> high liquidity (short term) vs. higher yield (long term).</li>
+            <li><strong>AI Strategy Insights:</strong> recommendations for lock periods aligned with risk profiles.</li>
+            <li><strong>Security:</strong> contracts audited and protected by anti-exploit mechanisms.</li>
+          </ul>
+          ${Callout('<strong class="text-brand">Goal:</strong> to build loyalty and ecosystem stability through fair long-term incentives.')}
+        `
+      },
+      trending: {
+        title: "Trending Tokens",
+        subtitle: "Real-time market radar with smart filters and cross-DEX analytics.",
+        body: `
+          <p><strong>Trending Tokens</strong> identifies opportunities by monitoring volume, price, and liquidity in <em>real-time</em>. Data is sourced from Moonshot and AbstractSwap (V2 & V3), offering a holistic view of the market.</p>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Surge Detection:</strong> highlights tokens with significant moves.</li>
+            <li><strong>Category Filters:</strong> top gainers/losers, new listings, whale activity.</li>
+            <li><strong>Interactive Dashboard:</strong> rankings, charts, and key indicators made simple.</li>
+            <li><strong>AI Insights:</strong> distinction between short-lived hype vs. sustainable trends.</li>
+          </ul>
+          ${Callout('<strong class="text-brand">Outcome:</strong> trading decisions become faster, smarter, and data-driven, not just speculative.')}
+        `
+      },
+      ai: {
+        title: "AI Token Analysis",
+        subtitle: "ML-powered analytics: fundamentals, sentiment, risk, and predictions.",
+        body: `
+          <p><strong>AI Token Analysis</strong> combines machine learning, on-chain data, and off-chain signals to deliver a holistic evaluation of a token.</p>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Fundamentals & On-Chain:</strong> holder distribution, liquidity, volume, contract audits, developer activity.</li>
+            <li><strong>Real-Time Sentiment:</strong> aggregated from social media, communities, and global crypto news.</li>
+            <li><strong>Risk Detection:</strong> alerts for short-lived pools, suspicious contract functions, or abnormal whale transactions.</li>
+            <li><strong>Trend Predictions:</strong> short- and mid-term movement estimates based on historical patterns.</li>
+          </ul>
+          ${Callout('<strong class="text-brand">Actionable Recommendations:</strong> entry signals, staking opportunities, or caution alerts—empowering users with stronger decision-making.')}
+        `
+      }
+    };
+
+    const pageHeader = document.getElementById('page-header');
+    const pageBody   = document.getElementById('page-body');
+    const nav        = document.getElementById('nav');
+    const sidebar    = document.getElementById('sidebar');
+    const overlay    = document.getElementById('overlay');
+    const openBtn    = document.getElementById('openMenu');
+    const closeBtn   = document.getElementById('closeMenu');
+
+    function setActive(linkEl) {
+      nav.querySelectorAll('a').forEach(a => a.classList.remove('active-link',
+        'bg-[linear-gradient(180deg,rgba(67,160,71,.2),rgba(67,160,71,.06))]','border-[#214b2d]','shadow-insetBrand'));
+      if (!linkEl) return;
+      linkEl.classList.add('active-link','bg-[linear-gradient(180deg,rgba(67,160,71,.2),rgba(67,160,71,.06))]','border-[#214b2d]','shadow-insetBrand');
+    }
+
+    function render(route) {
+      const data = CONTENT[route] || CONTENT.intro;
+      pageHeader.querySelector('h2').textContent = data.title;
+      pageHeader.querySelector('p').textContent  = data.subtitle;
+      pageBody.innerHTML = data.body;
+
+      const active = nav.querySelector(`a[data-route="${route}"]`) || nav.querySelector('a[data-route="intro"]');
+      setActive(active);
+
+      if (location.hash.replace('#','') !== route) {
+        history.pushState({route}, '', '#' + route);
+      }
+
+      // auto-close sidebar on mobile after navigation
+      if (window.innerWidth < 768) closeSidebar();
+    }
+
+    // Mobile sidebar controls
+    function openSidebar() {
+      sidebar.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSidebar() {
+      sidebar.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    openBtn?.addEventListener('click', openSidebar);
+    closeBtn?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
+
+    // Nav click handling
+    nav.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-route]');
+      if (!link) return;
+      e.preventDefault();
+      render(link.dataset.route);
+    });
+
+    // Router init
+    window.addEventListener('popstate', (e) => {
+      const route = (e.state && e.state.route) || location.hash.replace('#','') || 'intro';
+      render(route);
+    });
+
+    // First load
+    render(location.hash.replace('#','') || 'intro');
+  </script>
+</body>
+</html>
