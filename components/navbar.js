@@ -47,7 +47,7 @@ export function renderNavbar(onNavigate) {
   socialWrapper.className = 'flex gap-3 ml-6';
 
   const iconList = [
-    { name: 'Telegram', href: ' https://t.me/pookieAbstract', img: './assets/telegram.webp' },
+    { name: 'Telegram', href: ' https://t.me/pookieOnAbstract', img: './assets/telegram.webp' },
     { name: 'X', href: 'https://x.com/pookiedotfun', img: './assets/x.webp' },
     { name: 'GitHub', href: 'https://github.com/pookieABS', img: './assets/github.webp' }
   ];
@@ -126,7 +126,7 @@ export function renderSidebar(links) {
    socialWrapper.className = 'absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-6';
 
   const iconList = [
-    { name: 'Telegram', href: ' https://t.me/pookieAbstract', img: './assets/telegram.webp' },
+    { name: 'Telegram', href: ' https://t.me/pookieOnAbstract', img: './assets/telegram.webp' },
     { name: 'X', href: 'https://x.com/pookiedotfun', img: './assets/x.webp' },
     { name: 'GitHub', href: 'https://github.com/pookieABS', img: './assets/github.webp' }
   ];
