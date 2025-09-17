@@ -16,7 +16,7 @@ export function renderCommunitySection() {
   linksWrapper.className = 'flex gap-6 mb-10';
 
   const telegramLink = document.createElement('a');
-  telegramLink.href = 'https://t.me/pookieAbstract';
+  telegramLink.href = 'https://t.me/pookieOnAbstract';
   telegramLink.target = '_blank';
   telegramLink.className = 'bg-green-600 hover:bg-green-700 px-5 py-2.5 rounded-full text-base font-semibold transition-colors';
   telegramLink.textContent = 'Join Telegram';
