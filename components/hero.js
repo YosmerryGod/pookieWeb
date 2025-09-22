@@ -20,23 +20,22 @@ export function renderHeroSection() {
   const buttonGroup = document.createElement('div');
   buttonGroup.className = 'flex flex-col sm:flex-row gap-4 justify-center';
 
-  const btnApp = document.createElement('button');
-  btnApp.className = 'btn-primary text-black font-bold py-3 px-8 rounded-full';
-  btnApp.textContent = 'Go to App';
-  btnApp.addEventListener('click', () => {
-    window.location.href = '/app'; // arahkan ke halaman app kamu
+  // Tombol Claim Airdrop Live
+  const btnAirdrop = document.createElement('button');
+  btnAirdrop.className = 'btn-primary text-black font-bold py-3 px-8 rounded-full';
+  btnAirdrop.textContent = 'Claim Airdrop Live';
+  btnAirdrop.addEventListener('click', () => {
+    window.location.href = 'https://portal.pookieabs.xyz';
   });
 
   const btnDocs = document.createElement('button');
   btnDocs.className = 'btn-primary text-black font-bold py-3 px-8 rounded-full';
   btnDocs.textContent = 'Read Docs';
   btnDocs.addEventListener('click', () => {
-    window.location.href = '/docs.html'; // arahkan ke docs.html
-    // kalau hosting kamu pakai subpath: pookieabs.xyz/docs
-    // ganti dengan: window.location.href = '/docs';
+    window.location.href = '/docs.html';
   });
 
-  buttonGroup.appendChild(btnApp);
+  buttonGroup.appendChild(btnAirdrop);
   buttonGroup.appendChild(btnDocs);
 
   container.appendChild(heading);
