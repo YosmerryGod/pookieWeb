@@ -22,9 +22,9 @@ export function renderHeroSection() {
 
   const btnApp = document.createElement('button');
   btnApp.className = 'btn-primary text-black font-bold py-3 px-8 rounded-full';
-  btnApp.textContent = 'Go to App';
+  btnApp.textContent = 'Go to DApps';
   btnApp.addEventListener('click', () => {
-    window.location.href = '/app'; // arahkan ke halaman app kamu
+    window.location.href = 'https://portal.pookieabs.xyz'; // arahkan ke halaman app kamu
   });
 
   const btnDocs = document.createElement('button');
